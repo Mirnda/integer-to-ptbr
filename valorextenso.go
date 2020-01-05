@@ -16,6 +16,10 @@ type Extenso struct {
 
 func TranscreveValor(numero int64) (string, error) {
 
+	if numero == 0 || numero > 999999999 {
+		return "", fmt.Errorf("Programa limitado a numero maior que 0 e menor que 1 Bilhao")
+	}
+
 	var ValorEmExtenso string
 	var err error
 	numeros := makeExtenso()
